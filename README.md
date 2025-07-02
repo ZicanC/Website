@@ -1,6 +1,6 @@
 # Website
 
-这个项目包含一个简单的静态前端示例，并推荐使用 **Strapi** 作为后端。
+
 
 ## 前端
 
@@ -28,3 +28,4 @@
 4. 根据 Strapi 文档创建 `Post` 内容类型，启用公开读取权限，随后在 `frontend/script.js` 中将 `fetch` 地址改为实际接口地址。
 
 更多配置及部署方式请参考 [Strapi 官方文档](https://docs.strapi.io/)。
+

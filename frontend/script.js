@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  fetch('https://cms.example.com/api/posts')
+
     .then((res) => res.json())
     .then((data) => {
       const list = document.querySelector('#posts ul');

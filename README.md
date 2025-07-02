@@ -1,1 +1,12 @@
 # Website
+
+This repository hosts a simple website project.
+
+## Adding a Remote
+To push your commits and open a pull request, you first need to connect your local repository to a remote. Use the following command:
+
+```bash
+git remote add origin <url>
+```
+
+After adding a remote, you can push your commits and create pull requests on platforms like GitHub.

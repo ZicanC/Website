@@ -3,9 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
     .then((res) => res.json())
     .then((data) => {
       const list = document.querySelector('#posts ul');
-      data.forEach((post) => {
+      data.data.forEach((entry) => {
+        const { title } = entry.attributes;
         const li = document.createElement('li');
-        li.textContent = post.title;
+        li.textContent = title;
         list.appendChild(li);
       });
     })

@@ -1,0 +1,26 @@
+# Node dependencies
+node_modules/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Editor swap files
+*.swp
+*.swo
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Build directories
+build/
+dist/
+
+# Environment files
+.env
+.env.*

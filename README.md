@@ -1,7 +1,6 @@
 # Website
 
-这个项目包含一个简单的静态前端示例，并推荐使用 **Strapi** 作为后端。项目根目录下的
-`backend/` 提供了通过 Docker 快速启动 Strapi 的配置。
+
 
 ## 前端
 
@@ -30,11 +29,3 @@
 
 更多配置及部署方式请参考 [Strapi 官方文档](https://docs.strapi.io/)。
 
-### 使用仓库提供的 Docker 配置
-
-在 `backend/` 目录下准备了 `docker-compose.yml`，可以更便捷地启动 Strapi：
-
-1. 进入该目录并执行 `docker-compose up`
-2. 打开 <http://localhost:1337/admin> 创建管理员账户
-3. 使用内容类型构建器（Content-Type Builder）创建 `post` 类型，并开放读取权限
-4. 前端脚本默认请求 `http://localhost:1337/api/posts`

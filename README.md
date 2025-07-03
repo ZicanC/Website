@@ -29,3 +29,24 @@
 
 更多配置及部署方式请参考 [Strapi 官方文档](https://docs.strapi.io/)。
 
+## Nginx 反向代理示例
+
+部署到线上环境时，可使用 Nginx 提供静态文件并将 `/api` 路径转发至 Strapi。
+`nginx/site.conf` 给出了一个示例配置，核心部分如下：
+
+```nginx
+server {
+    listen 80;
+    server_name example.com;
+
+    root /var/www/website/frontend;
+    index index.html;
+
+    location /api/ {
+        proxy_pass http://localhost:1337/;
+    }
+}
+```
+
+将 `root` 与 `server_name` 根据实际服务器调整，启用后即可通过同一域名访问前端页面并由 `/api` 转发请求到 Strapi 后端。
+

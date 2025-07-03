@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-  fetch('http://localhost:1337/api/posts')
+  // 请求同域名下的 Strapi 接口，可通过 nginx 转发到实际后端
+  fetch('/api/posts')
     .then((res) => res.json())
     .then((data) => {
       const list = document.querySelector('#posts ul');

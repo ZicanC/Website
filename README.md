@@ -4,7 +4,15 @@
 
 ## 前端
 
-`frontend/` 目录下存放静态页面，可直接在浏览器中打开 `index.html` 预览效果。页面展示了图片画廊和从后端获取的文章列表（请求地址需根据实际部署的 Strapi 实例进行修改）。
+`frontend/` 目录下存放静态页面，可直接在浏览器中打开 `index.html` 预览效果。页面展示了图片画廊和从后端获取的文章列表。
+
+## 配置
+
+前端使用 `frontend/config.js` 提供可配置的 API 基础地址。你可以在加载脚本前设置
+`window.CONFIG = { API_BASE_URL: 'http://your-server:1337' }`，或在运行环境中设置
+`API_BASE_URL` 变量。未配置时默认使用 `http://localhost:1337`。
+
+`index.html` 已在引入 `script.js` 前加载 `config.js`，脚本会读取该地址来请求文章数据。
 
 ## 推荐的后端：Strapi
 

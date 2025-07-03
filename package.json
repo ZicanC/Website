@@ -2,6 +2,7 @@
   "type": "module",
   "scripts": {
     "start": "node server.js",
-    "test": "node test.js"
+    "test": "node test.js",
+    "backend": "docker-compose -f backend/docker-compose.yml up"
   }
 }

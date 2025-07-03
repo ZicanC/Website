@@ -4,8 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
     .then((res) => res.json())
     .then((data) => {
       const list = document.querySelector('#posts ul');
-      data.data.forEach((entry) => {
-        const { title } = entry.attributes;
+      const entries = Array.isArray(data) ? data : data.data;
+      entries.forEach((entry) => {
+        const title = entry.title || (entry.attributes && entry.attributes.title);
+        if (!title) return;
         const li = document.createElement('li');
         li.textContent = title;
         list.appendChild(li);

@@ -29,3 +29,6 @@
 
 更多配置及部署方式请参考 [Strapi 官方文档](https://docs.strapi.io/)。
 
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

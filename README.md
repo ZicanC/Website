@@ -53,3 +53,17 @@ npm run backend
 
 更多配置及部署方式请参考 [Strapi 官方文档](https://docs.strapi.io/)。
 
+## 使用 1Panel 管理服务器
+
+你可以通过开源面板 [1Panel](https://github.com/1Panel-dev/1Panel) 对服务器
+进行运维管理。本仓库在 `docker-compose.yml` 中已加入 `1panel` 服务，基于
+`xeath/1panel-in-docker` 镜像运行。默认使用宿主网络并挂载 Docker 相关目录：
+
+```bash
+docker-compose up -d 1panel
+```
+
+首次启动会按容器内脚本安装 1Panel，安装完成后可在浏览器访问
+`http://<宿主机IP>:8888`（或日志中提示的端口）。如需自定义面板端口等环境
+变量，可在 `docker-compose.yml` 中调整 `PANEL_PORT` 等设置。
+

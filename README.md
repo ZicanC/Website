@@ -35,7 +35,15 @@
    ```
 4. 根据 Strapi 文档创建 `Post` 内容类型，启用公开读取权限，随后在 `frontend/script.js` 中将 `fetch` 地址改为实际接口地址。
 
-如果你希望直接在本仓库中通过 Docker 快速启动 Strapi，可执行：
+如果你希望通过 Docker 同时启动前端与后端，可在仓库根目录执行：
+
+```bash
+docker-compose up
+```
+
+此命令会使用 `docker-compose.yml` 运行 Nginx 与 Strapi，前端将通过 <http://localhost:3000> 提供，后台仍在 <http://localhost:1337>。
+
+若只想启动 Strapi 后端，可执行：
 
 ```bash
 npm run backend

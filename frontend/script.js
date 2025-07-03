@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const base = window.API_BASE_URL || 'http://localhost:1337';
-  fetch(`${base}/api/posts`)
+  fetch(`${base}/posts`)
     .then((res) => res.json())
     .then((data) => {
       const list = document.querySelector('#posts ul');

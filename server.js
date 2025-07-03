@@ -1,6 +1,6 @@
 import http from 'http';
 import { createReadStream, existsSync } from 'fs';
-import { extname, join } from 'path';
+import { extname, join, normalize } from 'path';
 
 const port = process.env.PORT || 3000;
 const root = new URL('./frontend/', import.meta.url).pathname;
@@ -16,7 +16,14 @@ const mimeTypes = {
 };
 
 const server = http.createServer((req, res) => {
-  const filePath = join(root, req.url === '/' ? 'index.html' : req.url);
+  const urlPath = req.url === '/' ? 'index.html' : req.url.replace(/^\/+/, '');
+  const sanitizedPath = normalize(urlPath);
+  if (sanitizedPath.startsWith('..')) {
+    res.statusCode = 400;
+    res.end('Bad Request');
+    return;
+  }
+  const filePath = join(root, sanitizedPath);
   if (!existsSync(filePath)) {
     res.statusCode = 404;
     res.end('Not found');
